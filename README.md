@@ -34,6 +34,15 @@ display corresponding art piece
 
 PseudoCode 
 
+
+
+pass number to api 
+look at results 
+pull relevent info 
+pull data a
+now display date in a card 
+add favorites option 
+
 input tag to for user to type number 
 enter button
 layout for the page in bulma 
@@ -49,3 +58,7 @@ displays the art piece of the day
 resets input to be used again  
 
 
+
+local storage part 
+favorites section 
+save certain peices to a favorites bar 
