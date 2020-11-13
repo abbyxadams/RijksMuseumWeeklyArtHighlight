@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    $.ajax({
+        url: "https://api.pexels.com/v1/search?per_page=80&query=nature",
+        headers: { 'Authorization': '563492ad6f917000010000013764a400433c4372bb226bd9030c76d9' }
+    }).done(function (data) {
+        i = Math.floor(Math.random()*80);
+        console.log(data);
+        var backgroundImgURL = data['photos'][i]['src']['landscape'];
+        $('body').css("background-image","url(" + backgroundImgURL + ")");
+    })
+
     $('#showArt').modal();
     $('#showCollection').modal();
 
