@@ -1,23 +1,35 @@
-/*this is the css from the bulma template*/
 
-html,body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  #museumLogo {
+    display: block;
+    width: 300px;
+    height: 36px;
+    margin-top: 10px;
+    margin-left: 10px;
   }
-  .hero.is-info {
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ), url('https://unsplash.it/1200/900?random') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+
+  p {
+    color: black;
+  }
+
+  .littleImg {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+  }
+
+  #submitBtn {
+    width: 10%;
+    margin-left: 45%;
+    margin-top: 10%;
+  }
+
+  #alertSuccess {
+    color: black;
+  }
+
+  body {
     background-size: cover;
-  }
-  .hero .nav, .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .hero .subtitle {
-    padding: 3rem 0;
-    line-height: 1.5;
+    background-repeat: no-repeat;
+=======
+
   }

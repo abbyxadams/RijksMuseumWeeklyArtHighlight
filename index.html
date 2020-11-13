@@ -4,118 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Art Number Game</title>
-                
-                <!--this is the link to CSS Framework Bulma version 0.9.0-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
-                
 
+    <title>Rijksmuseum Art Randomizer</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                
                 <!--Css external file link-->
     <link rel="stylesheet" type="text/css" href="style.css">
 
-                <!--Javascript external file link-->
+                <!--Jquery Link-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Javascript external file link-->
     <script src="script.js"></script>
 
-                <!--Jquery Link-->
-    <script src="jquery-3.5.1.min.js"></script>
-
-
-                <!--font and bootstrap link-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 </head>
 <body>
     
-   
-    <section class="hero is-info is-fullheight">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="../">
-                        <img src="http://www.24oranges.nl/wp-content/uploads/2012/08/rijksmuseum-logos.png" alt="Logo">
-                    </a>
-                    <span class="navbar-burger burger" data-target="navbarMenu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div id="navbarMenu" class="navbar-menu">
-                    <div class="navbar-end">
-                        <span class="navbar-item">
-                            <a class="button is-white is-outlined" href="#">
-                                <span class="icon">
-                                    <i class="fa fa-home"></i>
-                                </span>
-                                <span>Home</span>
-                            </a>
-                        </span>
-                        <span class="navbar-item">
-                            <a class="button is-white is-outlined" href="#">
-                                <span class="icon">
-                                    <i class="fa fa-superpowers"></i>
-                                </span>
-                                <span>Examples</span>
-                            </a>
-                        </span>
-                        <span class="navbar-item">
-                            <a class="button is-white is-outlined" href="#">
-                                <span class="icon">
-                                    <i class="fa fa-book"></i>
-                                </span>
-                                <span>Documentation</span>
-                            </a>
-                        </span>
-                        <span class="navbar-item">
-                            <a class="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/landing.html">
-                                <span class="icon">
-                                    <i class="fa fa-github"></i>
-                                </span>
-                                <span>View Source</span>
-                            </a>
-                        </span>
-                    </div>
-                </div>
+
+        <nav>
+            <div class="nav-wrapper blue-grey">
+                <a class="brand-logo">
+                        <img src="Assets/Rijksmuseum logo 2012.png" alt="Logo" id="museumLogo">
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <a class="waves-effect waves-light btn-small indigo darken-4" id="viewCollection"><i class="material-icons right">palette</i>View Collection</a>
+                </ul>
             </div>
         </nav>
+
+
+
+        <a class="waves-effect waves-light btn indigo darken-4" id="submitBtn">Get Art</a>
+
+          <!-- Modal Structure -->
+  <div id="showArt" class="modal">
+    <div class="modal-content">
+      <h3 class="modal-card-title"></h3>
+      <p>
+        <img id="displayImg" class="responsive-img" alt="Sorry there is no image for this artwork">
+      </p>
+      <p id="title"></p>
+      <p id="maker"></p>
+      <p id="nationality"></p>
+      <p id="placeOfOrigin"></p>
+      <p id="yearCreated"></p>
+      <p id="medium"></p>
+      <p id="description"></p>
     </div>
+    <div class="modal-footer">
+      <a id="alertSuccess"></a>
+      <a id="addArt" class="waves-green btn-flat green">Add to Collection</a>
+      <a id="nextPiece" class="waves-effect waves-blue btn-flat light-blue lighten-3">Next Piece</a>
+      <a id="closeModal" class="waves-effect waves-blue btn-flat red lighten-2 modal-close">Close</a>
+    </div>
+  </div>
 
-
-
-
-
-<div class="hero-body">
-                <div class="container has-text-centered">
-                    <div class="column is-6 is-offset-3">
-                        <h1 class="title">
-                            Rijksmuseum Number Game
-                        </h1>
-                        <h2 class="subtitle">
-                            Instructions: Choose a number between 1-10,000. Art will be displayed below input field. 
-                        </h2>
-                        <div class="box">
-                            <div class="field is-grouped">
-                                <p class="control is-expanded">
-                                    <input class="input" type="text" placeholder="Enter your number">
-                                </p>
-                                <p class="control">
-                                    <a class="button is-info">
-                                        I want art
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
+  <div id="showCollection" class="modal">
+    <div class="modal-content">
+      <h4 class="modal-card-title">Your Collection</h4>
+      <div id="yourCollection"></div>
+    </div>
+  </div>
 
 </body>
 </html>
