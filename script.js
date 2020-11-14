@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $.ajax({
-        url: "https://api.pexels.com/v1/search?per_page=80&query=nature",
+        url: "https://api.pexels.com/v1/search?per_page=80&query=abstract",
         headers: { 'Authorization': '563492ad6f917000010000013764a400433c4372bb226bd9030c76d9' }
     }).done(function (data) {
         i = Math.floor(Math.random()*80);
@@ -37,9 +37,8 @@ $(document).ready(function () {
             var imgURL=data['artObjects'][index]['webImage']['url'];
             $('#displayImg').attr("src", imgURL);
             var title = data['artObjects'][index]['title'];
-            $('#title').text("Title: " + title);
             var objectID = data['artObjects'][index]['objectNumber'];
-            $('.modal-card-title').text("Rijksmuseum Object Number " + objectID);
+            $('.modal-card-title').text(title);
             $.ajax('https://www.rijksmuseum.nl/api/en/collection/'+objectID+'?key=2zUn2IDK').done(function (data) {
                 var nationality = data['artObject']['nationality'];
                 if (nationality=="null" || nationality==undefined) {
