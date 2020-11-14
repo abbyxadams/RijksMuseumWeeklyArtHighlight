@@ -38,7 +38,7 @@ $(document).ready(function () {
             $('#displayImg').attr("src", imgURL);
             var title = data['artObjects'][index]['title'];
             var objectID = data['artObjects'][index]['objectNumber'];
-            $('.modal-card-title').text(title);
+            $('#artTitle').text(title);
             $.ajax('https://www.rijksmuseum.nl/api/en/collection/'+objectID+'?key=2zUn2IDK').done(function (data) {
                 var nationality = data['artObject']['nationality'];
                 if (nationality=="null" || nationality==undefined) {
